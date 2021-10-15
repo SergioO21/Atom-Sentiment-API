@@ -37,16 +37,6 @@ app.post("/", async (req, res) => {
     }
     response.Entities = Entities;
 
-    const KeyPhrasesResponse = await Comprehend.detectKeyPhrases(
-        params).promise();
-    const KeyPhrases = KeyPhrasesResponse.KeyPhrases;
-    for (const phrase of KeyPhrases!) {
-      delete phrase["Score"];
-      delete phrase["BeginOffset"];
-      delete phrase["EndOffset"];
-    }
-    response.KeyPhrases = KeyPhrases;
-
     const SentimentsResponse = await Comprehend.detectSentiment(
         params).promise();
     response.Sentiments = SentimentsResponse;
