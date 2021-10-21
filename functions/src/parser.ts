@@ -28,8 +28,6 @@ export function toParse(text: string): Record<string, string>[] {
     for (const author of Authors) {
       if (info.author === author.author) {
         author.messages = [author.messages, info.message].join("\n");
-      }
-      if (info.author != "System") {
         allMessages = [allMessages, info.message].join("\n");
       }
     }
