@@ -1,6 +1,7 @@
 import * as admin from "firebase-admin";
 import * as AWS from "aws-sdk";
 import {toParse} from "./parser";
+import {badWords} from "./badWords";
 
 
 AWS.config.loadFromPath("./config.json");
@@ -21,6 +22,8 @@ export async function analyze(text: string): Promise<Record<string, unknown>> {
     const responses: Record<string, unknown> = {};
     const data = toParse(text);
 
+    responses.BadWords = badWords(text);
+
     for (const author of data) {
       const response: Record<string, unknown> = {};
       const params = {
@@ -40,7 +43,14 @@ export async function analyze(text: string): Promise<Record<string, unknown>> {
         delete entity["BeginOffset"];
         delete entity["EndOffset"];
       }
-      response.Entities = Entities;
+
+      const ClearEntities = [];
+      for (let i = 0; i < Entities!.length - 1; i++) {
+        if (Entities![i + 1].Text != Entities![i].Text) {
+          ClearEntities.push(Entities![i]);
+        }
+      }
+      response.Entities = ClearEntities;
 
       const SentimentsResponse = await Comprehend.detectSentiment(
           params).promise();
