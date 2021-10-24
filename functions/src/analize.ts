@@ -22,8 +22,6 @@ export async function analyze(text: string): Promise<Record<string, unknown>> {
     const responses: Record<string, unknown> = {};
     const data = toParse(text);
 
-    responses.BadWords = badWords(text);
-
     for (const author of data) {
       const response: Record<string, unknown> = {};
       const params = {
@@ -44,10 +42,19 @@ export async function analyze(text: string): Promise<Record<string, unknown>> {
         delete entity["EndOffset"];
       }
 
-      const ClearEntities = [];
-      for (let i = 0; i < Entities!.length - 1; i++) {
-        if (Entities![i + 1].Text != Entities![i].Text) {
-          ClearEntities.push(Entities![i]);
+      const ClearEntities: AWS.Comprehend.ListOfEntities = [];
+      for (const data of Entities!) {
+        if (ClearEntities.length === 0) {
+          ClearEntities.push(data);
+        } else {
+          for (let i = 0; i < ClearEntities.length; i++) {
+            if (data.Text === ClearEntities[i].Text) {
+              break;
+            }
+            if (i === ClearEntities.length - 1) {
+              ClearEntities.push(data);
+            }
+          }
         }
       }
       response.Entities = ClearEntities;
@@ -56,7 +63,8 @@ export async function analyze(text: string): Promise<Record<string, unknown>> {
           params).promise();
       response.Sentiments = SentimentsResponse;
 
-      response.Text = [author.messages];
+      response.Text = author.messages;
+      response.BadWords = badWords(author.messages);
       responses[author.author] = response;
     }
 

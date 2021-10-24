@@ -4,7 +4,6 @@ import {readFileSync} from "fs";
 const data = readFileSync("./SpanishBadWords.json", "utf-8");
 const SpanishBadWords = JSON.parse(data);
 
-const allBadWords: string[] = [];
 
 /**
  * @param {string} text - Text to analyze.
@@ -12,10 +11,13 @@ const allBadWords: string[] = [];
  * @return {string[]} - Returns all bad words found in the text.
 */
 export function badWords(text: string): string[] {
+  const allBadWords: string[] = [];
+
   for (const badWord of SpanishBadWords) {
-    if (text.includes(badWord)) {
+    if (text.toLowerCase().includes(badWord)) {
       allBadWords.push(badWord);
     }
   }
-  return allBadWords;
+  const ClearBadWords = [...new Set(allBadWords)];
+  return ClearBadWords;
 }
