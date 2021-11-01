@@ -1,7 +1,7 @@
 import {readFileSync} from "fs";
 
 
-const data = readFileSync("./SpanishBadWords.json", "utf-8");
+const data = readFileSync("./SpanglishBadWords.json", "utf-8");
 const SpanishBadWords = JSON.parse(data);
 
 
