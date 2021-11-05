@@ -15,7 +15,7 @@ API developed for <a href="https://atomchat.io/"> ATOM </a>, which implements an
 </br>
 
 # Tools
-Was developed with Typescript on the backend, Svelte on the front end, and deployed using Firebase.
+Was developed with Typescript and Express on the backend, Svelte on the front end, and deployed using Firebase Cloud Functions.
 <img src="https://github.com/SergioO21/Atom-Sentiment-API/blob/main/web-page/public/static/Atom-chat-analyzer-presentation.png" alt="toolsAtom" style="width:360px; height:200px;" align="center">
 
 ## <a href="https://sentiment-api-10a01.firebaseapp.com/" target="blank"> Try It </a>
