@@ -14,10 +14,13 @@ API developed to <a href="https://atomchat.io/"> ATOM </a>, which implements an 
 
 # Tools
 Was developed with Typescript on the backend, Svelte on the front end, and deployed using Firebase.
+<img src="https://github.com/SergioO21/Atom-Sentiment-API/blob/main/web-page/public/static/Atom-chat-analyzer-presentation.png" alt="toolsAtom" style="width=10; height=10;" align="center">
 
 ## <a href="https://sentiment-api-10a01.firebaseapp.com/"> Try It </a>
 
 ### <a href="https://youtu.be/Hu_2LWR87uQ"> Demo </a>
+
+<img src="https://github.com/SergioO21/Atom-Sentiment-API/blob/main/web-page/public/static/demo_atom.gif" alt="demoAtom" style="width=250; height=250;" align="center">
 
 
 
