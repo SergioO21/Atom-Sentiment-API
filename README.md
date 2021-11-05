@@ -8,15 +8,18 @@
 </div>
 
 <br> <br> <br> <br>
+<div align="center">
 
 # About
 API developed to <a href="https://atomchat.io/"> ATOM </a>, which implements an AI for recognition through sentiment analysis. We try, to solve the ability to retain customers by companies that use Whatsapp to manage their business, and that find through the management of bots and advisors , the flow of potential buyers. We provide a tool that gives a clear picture, to a new advisor, about to receive conversations with users, of where it is.
+</br>
 
 # Tools
 Was developed with Typescript on the backend, Svelte on the front end, and deployed using Firebase.
-<img src="https://github.com/SergioO21/Atom-Sentiment-API/blob/main/web-page/public/static/Atom-chat-analyzer-presentation.png" alt="toolsAtom" style="width=10; height=10;" align="center">
+<img src="https://github.com/SergioO21/Atom-Sentiment-API/blob/main/web-page/public/static/Atom-chat-analyzer-presentation.png" alt="toolsAtom" style="width=5; height=5;" align="center">
 
 ## <a href="https://sentiment-api-10a01.firebaseapp.com/"> Try It </a>
+</div>
 
 ### <a href="https://youtu.be/Hu_2LWR87uQ"> Demo </a>
 
