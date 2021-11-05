@@ -11,7 +11,7 @@
 <div align="center">
 
 # About
-API developed to <a href="https://atomchat.io/"> ATOM </a>, which implements an AI for recognition through sentiment analysis. We try, to solve the ability to retain customers by companies that use Whatsapp to manage their business, and that find through the management of bots and advisors , the flow of potential buyers. We provide a tool that gives a clear picture, to a new advisor, about to receive conversations with users, of where it is.
+API developed for <a href="https://atomchat.io/"> ATOM </a>, which implements an AI for sentiment analysis and entity recognition. Our approach to contribute the ability to retain customers by companies that use Whatsapp to manage their business, through bot and advisors management, optimizing the flow of potential buyers. We provide a tool that gives a clear picture, to a new advisor, about to receive conversations with users, of where it is.
 </br>
 
 # Tools
